@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Yekan";
+    src: url("./Yekan/Yekan.ttf"), url("./Yekan/Yekan.woff2") format("woff2"), url("./Yekan/Yekan.woff") format("woff"), url("./Yekan/Yekan.eot");
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IRANSans";
+    src: url("./IRANSans/IRANSansWeb.ttf"), url("./IRANSans/IRANSansWeb.woff2") format("woff2"), url("./IRANSans/IRANSansWeb.woff") format("woff"), url("./IRANSans/IRANSansWeb.eot");
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+}
