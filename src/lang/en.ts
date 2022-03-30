@@ -6,6 +6,7 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 // types
 
 import { Localization_Home, localization_Login, localization_Dash, localization_NotFound } from "./types";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const enHome: Localization_Home = {
     navBar: {
@@ -112,9 +113,9 @@ export const enHome: Localization_Home = {
     },
     question: {
         fag: [
-            { title: "24-hour support", description: "24-hour support all days of the week for free", icon: faHeadset },
-            { title: "Send nationwide", description: "24-hour support all days of the week for free", icon: faTruck },
-            { title: "Approved by legal authorities ", description: "24-hour support all days of the week for free", icon: faQuestionCircle },
+            { title: "24-hour support", description: "24-hour support all days of the week for free", icon: faHeadset as IconProp },
+            { title: "Send nationwide", description: "24-hour support all days of the week for free", icon: faTruck as IconProp },
+            { title: "Approved by legal authorities ", description: "24-hour support all days of the week for free", icon: faQuestionCircle as IconProp },
         ],
         tabs: [
             { title: "Is this purchase useful for me?", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Printers and texts but also newspapers and magazines in columns and rows as needed and for the circumstances  The current technology requirements and diverse applications" },

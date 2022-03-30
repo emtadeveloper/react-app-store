@@ -4,8 +4,8 @@ import React from "react";
 
 // theme and lang
 
-import Theme from "../theme/theme";
-import Lang from "../localization/lang";
+import Theme from "../themes/theme";
+import Lang from "../lang/lang";
 
 // types
 

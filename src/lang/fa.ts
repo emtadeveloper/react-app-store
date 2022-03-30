@@ -6,6 +6,7 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 // types
 
 import { Localization_Home, localization_Login, localization_Dash, localization_NotFound } from "./types";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const faHome: Localization_Home = {
     navBar: {
@@ -112,9 +113,9 @@ export const faHome: Localization_Home = {
     },
     question: {
         fag: [
-            { title: "پشتیبانی 24 ساعته ", description: "پشتیبانی 24 ساعته در تمام ایام هفته بصورت رایگان", icon: faHeadset },
-            { title: "ارسال به سراسر کشور ", description: "پشتیبانی 24 ساعته در تمام ایام هفته بصورت رایگان", icon: faTruck },
-            { title: "مورد تایید از مراجع قانونی  ", description: "پشتیبانی 24 ساعته در تمام ایام هفته بصورت رایگان", icon: faQuestionCircle },
+            { title: "پشتیبانی 24 ساعته ", description: "پشتیبانی 24 ساعته در تمام ایام هفته بصورت رایگان", icon: faHeadset as IconProp },
+            { title: "ارسال به سراسر کشور ", description: "پشتیبانی 24 ساعته در تمام ایام هفته بصورت رایگان", icon: faTruck as IconProp },
+            { title: "مورد تایید از مراجع قانونی  ", description: "پشتیبانی 24 ساعته در تمام ایام هفته بصورت رایگان", icon: faQuestionCircle as IconProp },
         ],
         tabs: [
             { title: "آیا این خرید برای من مفید است؟", description: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و با استفاده از طراحان گرافیک است" },
