@@ -8,10 +8,6 @@ import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// httpClient
-
-import { get } from "../services/HttpClient";
-
 // types
 
 import { IHandle, Lang, Theme, ITheme, IBox, IScroll, ICheckScroll } from "./types";
@@ -21,7 +17,7 @@ export const classTheme: ITheme<Theme, string> = (theme) => {
 };
 
 export const iconTheme: ITheme<Theme, IconProp> = (theme) => {
-    return theme === "dark" ? faSun : faMoon;
+    return theme === "dark" ? (faSun as IconProp) : (faMoon as IconProp);
 };
 
 export const handleChangeTheme: IHandle<Theme, Object> = (theme, themeChange) => {
