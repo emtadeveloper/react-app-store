@@ -5,10 +5,10 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
 // types
 
-import { Localization_Home, localization_Login, localization_Dash, localization_NotFound } from "./types";
+import { lang_Home, lang_Login, lang_Dash, lang_NotFound } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export const faHome: Localization_Home = {
+export const faHome: lang_Home = {
     navBar: {
         btn: "ورود",
         home: "خانه",
@@ -130,8 +130,13 @@ export const faHome: Localization_Home = {
     title_aboutUs: "درباره ما",
 };
 
-export const faLogin: localization_Login = { back: "برگشت", btn: "ورود", login: "ورود به سایت" };
+export const faLogin: lang_Login = { back: "برگشت", btn: "ورود", login: "ورود به سایت" };
 
-export const faDash: localization_Dash = { back: "برگشت", btn: "تسویه نهایی", empty: "سبدخرید شما خالی است", total: "جمع نهایی" };
+export const faDash: lang_Dash = {
+    back: "برگشت",
+    btn: "تسویه نهایی",
+    empty: "سبدخرید شما خالی است",
+    total: "جمع نهایی",
+};
 
-export const faNotFound: localization_NotFound = { NotFound: "صفحه یافت نشد", btn: "بازگشت به خانه" };
+export const faNotFound: lang_NotFound = { NotFound: "صفحه یافت نشد", btn: "بازگشت به خانه" };

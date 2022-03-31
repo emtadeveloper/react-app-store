@@ -2,7 +2,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export type lang = "فا" | "EN";
 
-export interface Localization_Home {
+export interface lang_Home {
     navBar: { btn: string; home: string; product: string; aboutMe: string; finish: string };
     desc: Array<{ id: number; direction: boolean; image: string; title: string; description: string; btn?: string }>;
     boxes: { box: Array<{ id: number; title: string; description: string }>; box_image: Array<{ id: number; image: string; alt: string }>; activeBoxes: number };
@@ -14,18 +14,18 @@ export interface Localization_Home {
     title_question: string;
     title_aboutUs: string;
 }
-export interface localization_Login {
+export interface lang_Login {
     back: string;
     btn: string;
     login: string;
 }
-export interface localization_Dash {
+export interface lang_Dash {
     back: string;
     btn: string;
     empty: string;
     total: string;
 }
-export interface localization_NotFound {
+export interface lang_NotFound {
     NotFound: string;
     btn: string;
 }

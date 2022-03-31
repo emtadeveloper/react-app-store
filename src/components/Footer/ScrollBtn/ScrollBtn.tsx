@@ -10,10 +10,11 @@ import { Button } from "./style.css.";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 // utils
 
-import { checkScrollTop, scrollItem } from "../../../utils";
+import { checkScrollTop, scrollItem } from "../../../helper";
 
 type isScroll = boolean;
 
@@ -25,7 +26,7 @@ const ScrollBtn: FC = () => {
 
     return (
         <Button $hidden={!showScroll} className="hidden" onClick={() => scrollItem()}>
-            <FontAwesomeIcon icon={faAngleUp} size="1x" className="icon" />
+            <FontAwesomeIcon icon={faAngleUp as IconProp} size="1x" className="icon" />
         </Button>
     );
 };

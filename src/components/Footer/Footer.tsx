@@ -21,8 +21,9 @@ import { ToastContainer } from "react-toastify";
 
 // utils
 
-import { handleToast } from "../../utils";
+import { handleToast } from "../../helper";
 import ScrollBtn from "./ScrollBtn";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const Footer: FC<IFooter> = ({ news, number, email, description }) => {
     //
@@ -30,7 +31,7 @@ const Footer: FC<IFooter> = ({ news, number, email, description }) => {
     return (
         <>
             <Container>
-                <FontAwesomeIcon className="icon" icon={faGraduationCap} size="6x" />
+                <FontAwesomeIcon className="icon" icon={faGraduationCap as IconProp} size="6x" />
                 <p>{description}</p>
                 <h4>{news.title}</h4>
                 <News>
@@ -40,11 +41,11 @@ const Footer: FC<IFooter> = ({ news, number, email, description }) => {
                 <Division>
                     <span>
                         {email}
-                        <FontAwesomeIcon className="gap_icon" icon={faEnvelope} size="2x" />
+                        <FontAwesomeIcon className="gap_icon" icon={faEnvelope as IconProp} size="2x" />
                     </span>
                     <span>
                         {number}
-                        <FontAwesomeIcon className="gap_icon" icon={faPhoneSquare} size="2x" />
+                        <FontAwesomeIcon className="gap_icon" icon={faPhoneSquare as IconProp} size="2x" />
                     </span>
                 </Division>
             </Container>

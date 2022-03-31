@@ -5,10 +5,10 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
 // types
 
-import { Localization_Home, localization_Login, localization_Dash, localization_NotFound } from "./types";
+import { lang_Home, lang_Login, lang_Dash, lang_NotFound } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export const enHome: Localization_Home = {
+export const enHome: lang_Home = {
     navBar: {
         btn: "login",
         home: "Home",
@@ -130,8 +130,14 @@ export const enHome: Localization_Home = {
     title_question: "question",
     title_aboutUs: "Abou Us",
 };
-export const enLogin: localization_Login = { back: "back", btn: "login", login: "sign in " };
 
-export const enDash: localization_Dash = { back: "back", btn: "Final settlement", empty: "Your shopping cart is empty ", total: "total sum" };
+export const enLogin: lang_Login = { back: "back", btn: "login", login: "sign in " };
 
-export const enNotFound: localization_NotFound = { NotFound: "NotFoundPage", btn: "back Home" };
+export const enDash: lang_Dash = {
+    back: "back",
+    btn: "Final settlement",
+    empty: "Your shopping cart is empty ",
+    total: "total sum",
+};
+
+export const enNotFound: lang_NotFound = { NotFound: "NotFoundPage", btn: "back Home" };

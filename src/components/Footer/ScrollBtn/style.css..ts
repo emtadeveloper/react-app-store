@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { box, position } from "../../../theme/mixin";
+import { box, position } from "../../../styles/mixin";
 interface hiddenProps {
     readonly $hidden: boolean;
 }

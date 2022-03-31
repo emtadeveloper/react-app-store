@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { flex_center_between } from "../../theme/share";
+import { flex_center_between } from "../../styles/share";
 
 // animation
 
