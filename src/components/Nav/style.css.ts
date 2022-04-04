@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
-import { flex_center_end } from "../../styles/share";
+import { flex_items_center } from "../../styles/share";
 import { marginPadding, position } from "../../styles/mixin";
 
 export const Container = styled.nav`
     z-index: 3;
-    ${flex_center_end};
+    ${flex_items_center};
+    justify-content: flex-end;
     border-radius: 1.5rem;
     ${position({ position: "sticky", top: "5rem" })}
     background-color: ${(props) => props.theme.main.box};

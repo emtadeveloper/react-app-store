@@ -1,7 +1,6 @@
 // react
 
-import { FC, useContext } from "react";
-import { Context } from "../../contexts";
+import { FC } from "react";
 
 // icons
 
@@ -12,18 +11,26 @@ import { faMagnifyingGlass, faBagShopping } from "@fortawesome/free-solid-svg-ic
 
 import { Container, Divison, Bage } from "./style.css";
 
-// utils
+// helper
 
-import { handleChangeLang, handleChangeTheme, classTheme, iconTheme, langText, scrollItem } from "../../helper";
+import { classTheme, iconTheme, langText, scrollItem } from "../../helper";
 
 // types
 
 import { IHeader } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { useLangContext } from "../../hooks/useLangContext";
+import { useThemeContext } from "../../hooks/useThemeContext";
+import { useLangAction } from "../../hooks/uselangAction";
+import { useThemeAction } from "../../hooks/useThemeAction";
 
 const Header: FC<IHeader> = ({ bage }) => {
     //
-    const { theme, lang, langChange, themeChange } = useContext(Context);
+    const lang = useLangContext();
+    const theme = useThemeContext();
+    const { changeTheme } = useThemeAction();
+    const { changeLang } = useLangAction();
+
     return (
         <Container>
             <Divison>
@@ -32,8 +39,8 @@ const Header: FC<IHeader> = ({ bage }) => {
                 <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} onClick={() => scrollItem(2100)} className="icon" />
             </Divison>
             <Divison>
-                <FontAwesomeIcon icon={iconTheme(theme)} className={classTheme(theme)} onClick={() => handleChangeTheme(theme, themeChange)} />
-                <span onClick={() => handleChangeLang(lang, langChange)} className="theme lang">
+                <FontAwesomeIcon icon={iconTheme(theme)} className={classTheme(theme)} onClick={changeTheme} />
+                <span onClick={changeLang} className="theme lang">
                     {langText(lang)}
                 </span>
             </Divison>

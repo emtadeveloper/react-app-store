@@ -20,9 +20,27 @@ import { faArrowRight, faGraduationCap } from "@fortawesome/free-solid-svg-icons
 import { ILogin } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
+// http
+
+import { post } from "../../services";
+
 const Login: FC<ILogin> = ({ back, btn, login }) => {
     //
     const Navigate = useNavigate();
+
+    const Login = (e: any) => {
+        e.preventDefault();
+        fetch("https://fakestoreapi.com/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: "mor_2314",
+                password: "83r5^_",
+            }),
+        })
+            .then((res) => res.json())
+            .then((json) => console.log(json));
+    };
 
     return (
         <Container>
@@ -33,9 +51,11 @@ const Login: FC<ILogin> = ({ back, btn, login }) => {
                 </span>
                 <FontAwesomeIcon className="gap_icon" icon={faGraduationCap as IconProp} size="6x" />
                 <h2>{login}</h2>
-                <input placeholder="ایمیل شما" />
-                <input placeholder="رمز عبور شما" />
-                <input value={btn} type="submit" className="btn" onClick={() => Navigate("/Dashboard")} />
+                <input placeholder="ایمیل شما" defaultValue="mor_2314" />
+                <input placeholder="رمز عبور شما" defaultValue="83r5^_" />
+                <button className="btn" onClick={(e) => Login(e)}>
+                    {btn}
+                </button>
             </form>
         </Container>
     );

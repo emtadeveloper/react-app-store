@@ -1,18 +1,29 @@
+// react
+
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+// router
+
 import { BrowserRouter } from "react-router-dom";
+
+// provider
+
+import LangProvider from "./providers/LangProvider";
+import ThemeColorProvider from "./providers/ThemeColorProvider";
+
+// component
+
+import App from "./App";
+import Compose from "./components/compose";
+
 import "./fonts/fonts.css";
 ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </React.StrictMode>,
+    <Compose components={[React.StrictMode, LangProvider, ThemeColorProvider, BrowserRouter]}>
+        <App />
+    </Compose>,
     document.getElementById("root")
 );
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

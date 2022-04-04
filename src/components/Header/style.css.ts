@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { flex_center_between } from "../../styles/share";
+import { flex_items_center } from "../../styles/share";
 
 // animation
 
@@ -32,7 +32,8 @@ const rotateMoon = keyframes`
 export const Container = styled.header`
     margin: 0 2rem;
     position: relative;
-    ${flex_center_between}
+    ${flex_items_center}
+    justify-content: space-between;
 `;
 
 export const Divison = styled.div`

@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { flex_coulmn_center, directionText } from "../../styles/share";
+import { flex_center, directionText } from "../../styles/share";
 import { grid } from "../../styles/mixin";
 
 export const Container = styled.footer`
-    ${flex_coulmn_center};
+    ${flex_center};
+    flex-direction: column;
     background-color: ${(props) => props.theme.main.box};
     padding: 4rem 0;
     border-radius: 1.5rem;

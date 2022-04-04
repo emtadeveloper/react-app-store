@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { position, box } from "../../styles/mixin";
-import { flex_center, flex_center_between } from "../../styles/share";
+import { flex_center, flex_items_center } from "../../styles/share";
 
 export const Container = styled.div`
     direction: rtl;
@@ -12,7 +12,8 @@ export const Container = styled.div`
         padding: 1.5rem;
         border-radius: 1.5rem;
         flex-direction: column;
-        ${flex_center_between};
+        ${flex_items_center};
+        justify-content: space-between;
         background-color: white;
         border: 1px solid rgba(0, 0, 0, 0.2);
         box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);

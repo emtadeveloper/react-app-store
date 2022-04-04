@@ -1,10 +1,3 @@
-export type Theme = "dark" | "light";
+export type ModeType = { theme: "dark" | "light"; lang: "EN" | "فا" };
 
-export type Lang = "فا" | "EN";
-
-export interface IContext {
-    theme: Theme;
-    lang: Lang;
-    themeChange: (color: string) => void;
-    langChange: (lang: string) => void;
-}
+export type SetModeType = { theme: (theme: "dark" | "light") => void; lang: (lang: "فا" | "EN") => void };

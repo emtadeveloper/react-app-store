@@ -1,5 +1,3 @@
-// styles;
-
 import { createGlobalStyle } from "styled-components";
 import { IGlobal } from "./types";
 import { directionText } from "./share";

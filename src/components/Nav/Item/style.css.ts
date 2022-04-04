@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { position, box } from "../../../styles/mixin";
-import { flex_center_start } from "../../../styles/share";
+import { flex_items_center } from "../../../styles/share";
 
 export const List = styled.ul`
-    ${flex_center_start};
+    ${flex_items_center};
+    justify-content: flex-start;
     li {
         cursor: pointer;
         margin: 0 2rem;

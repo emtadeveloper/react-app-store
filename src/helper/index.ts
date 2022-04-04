@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 // types
 
-import { IHandle, Lang, Theme, ITheme, IBox, IScroll, ICheckScroll } from "./types";
+import { Lang, Theme, ITheme, IBox, IScroll, ICheckScroll } from "./types";
 
 export const classTheme: ITheme<Theme, string> = (theme) => {
     return theme === "light" ? "theme animationMoon" : " theme  animationSun";
@@ -18,14 +18,6 @@ export const classTheme: ITheme<Theme, string> = (theme) => {
 
 export const iconTheme: ITheme<Theme, IconProp> = (theme) => {
     return theme === "dark" ? (faSun as IconProp) : (faMoon as IconProp);
-};
-
-export const handleChangeTheme: IHandle<Theme, Object> = (theme, themeChange) => {
-    return theme === "dark" ? themeChange("light") : themeChange("dark");
-};
-
-export const handleChangeLang: IHandle<Lang, Object> = (lang, langChange) => {
-    return lang === "فا" ? langChange("EN") : langChange("فا");
 };
 
 export const langText: ITheme<Lang, Lang> = (lang) => {

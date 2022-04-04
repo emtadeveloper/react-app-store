@@ -9,13 +9,7 @@ import { lang_Home, lang_Login, lang_Dash, lang_NotFound } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const enHome: lang_Home = {
-    navBar: {
-        btn: "login",
-        home: "Home",
-        product: "Product",
-        aboutMe: "AboutMe",
-        finish: "finish",
-    },
+    navBar: { btn: "login", home: "Home", product: "Product", aboutMe: "AboutMe", finish: "finish" },
     desc: [
         {
             id: 6,
@@ -125,7 +119,6 @@ export const enHome: lang_Home = {
             { title: "Is it possible to get a refund? ", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Printers and texts but also newspapers and magazines in columns and rows as needed and for the circumstances  The current technology requirements and diverse applications" },
         ],
     },
-
     title_product: "product",
     title_question: "question",
     title_aboutUs: "Abou Us",
@@ -133,11 +126,6 @@ export const enHome: lang_Home = {
 
 export const enLogin: lang_Login = { back: "back", btn: "login", login: "sign in " };
 
-export const enDash: lang_Dash = {
-    back: "back",
-    btn: "Final settlement",
-    empty: "Your shopping cart is empty ",
-    total: "total sum",
-};
+export const enDash: lang_Dash = { back: "back", btn: "Final settlement", empty: "Your shopping cart is empty ", total: "total sum" };
 
 export const enNotFound: lang_NotFound = { NotFound: "NotFoundPage", btn: "back Home" };
