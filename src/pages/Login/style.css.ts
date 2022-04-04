@@ -10,11 +10,11 @@ export const Container = styled.div`
     ${position({ position: "absolute", top: "50%", left: "50%" })};
     form {
         padding: 1.5rem;
-        border-radius: 1.5rem;
-        flex-direction: column;
         ${flex_items_center};
-        justify-content: space-between;
+        flex-direction: column;
+        border-radius: 1.5rem;
         background-color: white;
+        justify-content: space-between;
         border: 1px solid rgba(0, 0, 0, 0.2);
         box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
         .back {
@@ -46,12 +46,13 @@ export const Container = styled.div`
             padding: 1rem 0;
             text-align: center;
             font-size: 1.4rem;
-            border-radius: 1.5rem;
             margin: 1rem 4rem;
+            border-radius: 1.5rem;
             background-color: #f7f2f9;
         }
         .btn {
             color: white;
+            ${flex_center}
             width: 100%;
             padding: 1rem 0;
             font-size: 1.4rem;

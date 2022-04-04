@@ -1,6 +1,6 @@
 // react
 
-import { FC } from "react";
+import { FC, useState } from "react";
 
 // router
 
@@ -17,19 +17,24 @@ import { faArrowRight, faGraduationCap } from "@fortawesome/free-solid-svg-icons
 
 // types
 
-import { ILogin } from "./types";
+import { ILogin } from "./../../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 // http
 
-import { post } from "../../services";
+import { CircleSpinner } from "react-spinners-kit";
+import { useAuthAction } from "../../hooks/useAuthAction";
+import { ToastContainer, toast } from "react-toastify";
 
-const Login: FC<ILogin> = ({ back, btn, login }) => {
+const Login: FC<ILogin> = ({ back, btn, login, toastMessage }) => {
     //
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+    const { SetToken } = useAuthAction();
 
-    const Login = (e: any) => {
+    const Login = (e: React.SyntheticEvent) => {
         e.preventDefault();
+        setLoading(true);
         fetch("https://fakestoreapi.com/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -39,24 +44,33 @@ const Login: FC<ILogin> = ({ back, btn, login }) => {
             }),
         })
             .then((res) => res.json())
-            .then((json) => console.log(json));
+            .then((res) => {
+                setLoading(false);
+                SetToken(res.token);
+                navigate("/dashboard", { replace: true });
+            })
+            .catch(() => {
+                setLoading(false);
+                return toast.error(toastMessage, { position: "top-right", autoClose: 1000, hideProgressBar: false, theme: "colored" });
+            });
     };
 
     return (
         <Container>
             <form>
-                <span className="back" onClick={() => Navigate("/")}>
+                <span className="back" onClick={() => navigate("/")}>
                     <FontAwesomeIcon icon={faArrowRight as IconProp} className="icon" />
                     {back}
                 </span>
                 <FontAwesomeIcon className="gap_icon" icon={faGraduationCap as IconProp} size="6x" />
                 <h2>{login}</h2>
-                <input placeholder="ایمیل شما" defaultValue="mor_2314" />
-                <input placeholder="رمز عبور شما" defaultValue="83r5^_" />
-                <button className="btn" onClick={(e) => Login(e)}>
-                    {btn}
+                <input defaultValue="mor_2314" />
+                <input defaultValue="83r5^_" />
+                <button className="btn" onClick={Login}>
+                    {loading ? <CircleSpinner size={15} color="white" /> : btn}
                 </button>
             </form>
+            <ToastContainer />
         </Container>
     );
 };

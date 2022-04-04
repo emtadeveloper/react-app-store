@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import NotFoundPage from "../pages/NotFoundPage";
+import PrivateRoute from "./PrivateRoute";
 
 // hooks
 
@@ -21,8 +22,8 @@ const Router: FC = () => {
     return (
         <Routes>
             <Route path="/" element={<Home {...LangHome} />} />
-            <Route path="/Login" element={<Login {...LangLogin} />} />
-            <Route path="/Dashboard" element={<Dashboard {...LangDash} />} />
+            <Route path="/login" element={<Login {...LangLogin} />} />
+            <Route path="/dashboard" element={<PrivateRoute component={Dashboard} props={LangDash} />} />
             <Route path="*" element={<NotFoundPage {...LangNotFound} />} />
         </Routes>
     );

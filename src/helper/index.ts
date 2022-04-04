@@ -6,33 +6,25 @@ import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 // package
 
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 // types
 
-import { Lang, Theme, ITheme, IBox, IScroll, ICheckScroll } from "./types";
+import { ITheme, IScroll, ICheckScroll } from "./types";
+import { ModeType } from "../types";
 
-export const classTheme: ITheme<Theme, string> = (theme) => {
+export const classTheme: ITheme<ModeType["theme"], string> = (theme) => {
     return theme === "light" ? "theme animationMoon" : " theme  animationSun";
 };
 
-export const iconTheme: ITheme<Theme, IconProp> = (theme) => {
+export const iconTheme: ITheme<ModeType["theme"], IconProp> = (theme) => {
     return theme === "dark" ? (faSun as IconProp) : (faMoon as IconProp);
 };
 
-export const langText: ITheme<Lang, Lang> = (lang) => {
+export const langText: ITheme<ModeType["lang"], ModeType["lang"]> = (lang) => {
     return lang === "فا" ? "EN" : "فا";
 };
 
-export const handelToggleButton: IBox = (id, box, setBox) => {
-    box.filter((item) => {
-        return item.id === id ? setBox(item) : null;
-    });
-};
-
-export const scrollItem: IScroll = (scroll = 0) => {
-    return window.scrollTo({ top: scroll, behavior: "smooth" });
-};
+export const scrollItem: IScroll = (scroll = 0) => window.scrollTo({ top: scroll, behavior: "smooth" });
 
 export const checkScrollTop: ICheckScroll = (showScroll, setShowScroll) => {
     if (!showScroll && window.pageYOffset > 400) {

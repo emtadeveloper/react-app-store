@@ -10,7 +10,7 @@ import Nav from "../../components/Nav";
 
 // types
 
-import { IHome } from "./types";
+import { IHome } from "./../../types";
 
 const Home: FC<IHome> = ({ footer, navBar }) => {
     return (

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { IGlobal } from "./types";
-import { directionText } from "./share";
+import { directionText, flex_center } from "./share";
 export default createGlobalStyle<{ theme: IGlobal }>`
 
 *{

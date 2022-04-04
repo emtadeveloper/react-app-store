@@ -1,12 +1,17 @@
+// react
+
 import React, { FC } from "react";
 
 //context
 
 import { ThemeContext } from "../contexts/ThemeContext";
 import { SetThemeContext } from "../contexts/SetThemeContext";
-import { ModeType } from "../contexts/types";
 
-const ThemeColorProvider: FC = ({ children }) => {
+// types
+
+import { ModeType } from "../types";
+
+const ThemeColorProvider: FC<React.ReactNode> = ({ children }) => {
     //
     const [theme, setTheme] = React.useState<ModeType["theme"]>("light");
 

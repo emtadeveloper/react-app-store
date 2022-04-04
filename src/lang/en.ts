@@ -5,11 +5,11 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
 // types
 
-import { lang_Home, lang_Login, lang_Dash, lang_NotFound } from "./types";
+import { IHome, ILogin, IDash, INotFound } from "./../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export const enHome: lang_Home = {
-    navBar: { btn: "login", home: "Home", product: "Product", aboutMe: "AboutMe", finish: "finish" },
+export const enHome: IHome = {
+    navBar: { btnDash: "dashboard", btnLogin: "login", home: "Home", product: "Product", aboutMe: "AboutMe", finish: "finish" },
     desc: [
         {
             id: 6,
@@ -124,8 +124,8 @@ export const enHome: lang_Home = {
     title_aboutUs: "Abou Us",
 };
 
-export const enLogin: lang_Login = { back: "back", btn: "login", login: "sign in " };
+export const enLogin: ILogin = { toastMessage: "Unfortunately we have a problem, please check your internet connection", back: "back", btn: "login", login: "sign in " };
 
-export const enDash: lang_Dash = { back: "back", btn: "Final settlement", empty: "Your shopping cart is empty ", total: "total sum" };
+export const enDash: IDash = { logout: "logout account", back: "back", empty: "Your shopping cart is empty ", total: "total sum" };
 
-export const enNotFound: lang_NotFound = { NotFound: "NotFoundPage", btn: "back Home" };
+export const enNotFound: INotFound = { NotFound: "NotFoundPage", btn: "back Home" };

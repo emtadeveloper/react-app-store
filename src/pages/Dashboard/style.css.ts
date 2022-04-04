@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import { flex_center } from "../../styles/share";
+import { position, grid, box } from "../../styles/mixin";
 
 export const Container = styled.div`
+    width: 80%;
     direction: rtl;
-
+    transform: translate(-50%, -50%);
+    ${position({ position: "absolute", top: "50%", left: "50%" })};
     span {
         display: inline-block;
         margin: 3rem 0;
@@ -13,47 +17,42 @@ export const Container = styled.div`
         }
     }
 `;
-export const Divison = styled.div`
-    width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 50vh;
-    grid-gap: 2rem;
+
+export const Division = styled.div`
+    ${grid({ gap: "2rem", row: "50vh", column: "1fr 4fr" })}
+    @media screen and (max-width: 1050px) {
+        grid-template-columns: 1fr 2fr;
+    }
     @media screen and (max-width: 670px) {
         grid-template-columns: 1fr;
     }
     .user {
-        display: flex;
-        padding: 2rem;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
         border-radius: 1.5rem;
-        background-color: ${(props) => props.theme.main.secoundryColor};
-        .icon {
-            color: ${(props) => props.theme.main.primaryColor};
+        background-color: ${(props) => props.theme.main.box};
+        .parent-icon {
+            ${flex_center}
+            height: 85%;
         }
-        h2 {
-            margin: 2rem 0;
-            text-align: center;
-            color: ${(props) => props.theme.main.primaryColor};
+        .icon {
+            opacity: 80%;
+            padding: 2.5rem;
+            border-radius: 50%;
+            color: ${(props) => props.theme.main.secoundryColor};
+            border: 0.5rem solid ${(props) => props.theme.main.secoundryColor};
+        }
+        .logout {
+            padding: 1rem 0;
+            border-radius: 0 0 1.5rem 1.5rem;
+            ${box({ height: "15%", width: "100%" })}
         }
     }
     .userBox {
-        flex-grow: 1;
-        display: grid;
-        padding: 2rem;
-        align-items: center;
         border-radius: 1.5rem;
-        justify-content: center;
-        background-color: ${(props) => props.theme.main.secoundryColor};
+        ${grid({ align: "center", justify: "center" })}
+        background-color: ${(props) => props.theme.main.box};
         h3 {
-            color: ${(props) => props.theme.main.primaryColor};
             font-size: 2rem;
+            color: ${(props) => props.theme.main.secoundryColor};
         }
     }
 `;

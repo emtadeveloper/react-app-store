@@ -1,5 +1,6 @@
 export interface INav {
-    btn: string;
+    btnLogin: string;
+    btnDash: string;
     home: string;
     product: string;
     aboutMe: string;

@@ -1,4 +1,7 @@
-import { theme } from "./types";
-const Theme: theme = "dark";
+// types
+
+import { ModeType } from "./../types";
+
+const Theme: ModeType["theme"] = "dark";
 
 export default Theme;

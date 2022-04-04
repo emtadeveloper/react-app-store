@@ -25,15 +25,19 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { INav } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-const Nav: FC<INav> = ({ btn, ...props }) => {
+const Nav: FC<INav> = ({ btnLogin, btnDash, ...props }) => {
     //
+    const isToken = localStorage.getItem("token");
     const Navigate = useNavigate();
+    const Login = () => {
+        !!isToken ? Navigate("/dashboard") : Navigate("/login");
+    };
 
     return (
         <>
             <Container>
                 <Hamburger />
-                <Button onClick={() => Navigate("/Login")}>{btn}</Button>
+                <Button onClick={Login}>{localStorage.getItem("token") ? btnDash : btnLogin}</Button>
                 <NavItem {...props} />
                 <FontAwesomeIcon className="gap_icon" icon={faGraduationCap as IconProp} />
             </Container>

@@ -12,9 +12,9 @@ import { Container } from "./style.css";
 
 // types
 
-import { INotfound } from "./types";
+import { INotFound } from "./../../types";
 
-const NotFoundPage: FC<INotfound> = ({ NotFound, btn }) => {
+const NotFoundPage: FC<INotFound> = ({ NotFound, btn }) => {
     //
     const Navigate = useNavigate();
 

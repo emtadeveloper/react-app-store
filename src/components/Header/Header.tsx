@@ -19,6 +19,9 @@ import { classTheme, iconTheme, langText, scrollItem } from "../../helper";
 
 import { IHeader } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
+// hooks
+
 import { useLangContext } from "../../hooks/useLangContext";
 import { useThemeContext } from "../../hooks/useThemeContext";
 import { useLangAction } from "../../hooks/uselangAction";

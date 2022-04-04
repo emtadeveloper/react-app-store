@@ -1,5 +1,3 @@
-export type theme = "dark" | "light";
-
 export type pallete = {
     diection: Boolean;
     dark: {

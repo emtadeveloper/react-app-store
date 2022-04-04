@@ -1,12 +1,17 @@
+// react
+
 import React, { FC } from "react";
 
 //context
 
 import { LangContext } from "../contexts/LangContext";
 import { SetLangContext } from "../contexts/SetLangContext";
-import { ModeType } from "../contexts/types";
 
-const LangProvider: FC = ({ children }) => {
+// types
+
+import { ModeType } from "../types";
+
+const LangProvider: FC<React.ReactNode> = ({ children }) => {
     //
     const [lang, setLang] = React.useState<ModeType["lang"]>("فا");
 

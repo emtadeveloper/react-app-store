@@ -5,12 +5,13 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
 // types
 
-import { lang_Home, lang_Login, lang_Dash, lang_NotFound } from "./types";
+import { IHome, ILogin, IDash, INotFound } from "./../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export const faHome: lang_Home = {
+export const faHome: IHome = {
     navBar: {
-        btn: "ورود",
+        btnDash: "داشبورد",
+        btnLogin: "ورود",
         home: "خانه",
         product: "محصولات",
         aboutMe: "درباره ما",
@@ -130,13 +131,13 @@ export const faHome: lang_Home = {
     title_aboutUs: "درباره ما",
 };
 
-export const faLogin: lang_Login = { back: "برگشت", btn: "ورود", login: "ورود به سایت" };
+export const faLogin: ILogin = { toastMessage: " متاسفانه مشکلی داریم لطفا اتصال به اینترنت رو بررسی کنید ", back: "برگشت", btn: "ورود", login: "ورود به سایت" };
 
-export const faDash: lang_Dash = {
+export const faDash: IDash = {
+    logout: "خروج از حساب",
     back: "برگشت",
-    btn: "تسویه نهایی",
     empty: "سبدخرید شما خالی است",
     total: "جمع نهایی",
 };
 
-export const faNotFound: lang_NotFound = { NotFound: "صفحه یافت نشد", btn: "بازگشت به خانه" };
+export const faNotFound: INotFound = { NotFound: "صفحه یافت نشد", btn: "بازگشت به خانه" };
