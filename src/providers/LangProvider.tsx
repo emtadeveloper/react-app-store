@@ -11,9 +11,13 @@ import { SetLangContext } from "../contexts/SetLangContext";
 
 import { ModeType } from "../types";
 
+// helper
+
+import { initLang } from "../helper";
+
 const LangProvider: FC<React.ReactNode> = ({ children }) => {
     //
-    const [lang, setLang] = React.useState<ModeType["lang"]>("فا");
+    const [lang, setLang] = React.useState<ModeType["lang"]>(initLang);
 
     return (
         <LangContext.Provider value={lang}>

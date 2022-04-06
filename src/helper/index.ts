@@ -24,6 +24,22 @@ export const langText: ITheme<ModeType["lang"], ModeType["lang"]> = (lang) => {
     return lang === "فا" ? "EN" : "فا";
 };
 
+export const initLang: () => ModeType["lang"] = () => {
+    if (!!localStorage.getItem("lang")) {
+        return localStorage.getItem("lang") as ModeType["lang"];
+    }
+    localStorage.setItem("lang", "فا");
+    return "فا";
+};
+
+export const initTheme: () => ModeType["theme"] = () => {
+    if (!!localStorage.getItem("theme")) {
+        return localStorage.getItem("theme") as ModeType["theme"];
+    }
+    localStorage.setItem("theme", "light");
+    return "light";
+};
+
 export const scrollItem: IScroll = (scroll = 0) => window.scrollTo({ top: scroll, behavior: "smooth" });
 
 export const checkScrollTop: ICheckScroll = (showScroll, setShowScroll) => {

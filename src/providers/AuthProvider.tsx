@@ -1,6 +1,6 @@
 // react
 
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 // context
 
@@ -12,7 +12,8 @@ import { SetAuthContext } from "../contexts/SetAuthContext";
 import { AuthType } from "../types";
 
 const AuthProvider: FC<React.ReactNode> = ({ children }) => {
-    const [authTokens, setAuthTokens] = useState<AuthType["Token"]>(null);
+    const token = !!localStorage.getItem("token") ? localStorage.getItem("token") : null;
+    const [authTokens, setAuthTokens] = useState<AuthType["Token"]>(token);
     return (
         <AuthContext.Provider value={authTokens}>
             <SetAuthContext.Provider value={setAuthTokens}>{children}</SetAuthContext.Provider>

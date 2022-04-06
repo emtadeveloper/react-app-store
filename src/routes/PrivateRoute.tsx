@@ -10,8 +10,13 @@ import { Navigate } from "react-router-dom";
 
 import { IPrivate } from "./types";
 
+// context
+
+import { useAuthContext } from "../hooks/useAuthContext";
+
 const PrivateRoute: FC<IPrivate> = ({ component: Component, props }) => {
-    return localStorage.getItem("token") ? <Component {...props} /> : <Navigate replace to="/" />;
+    const token = useAuthContext();
+    return token ? <Component {...props} /> : <Navigate replace to="/" />;
 };
 
 export default PrivateRoute;
