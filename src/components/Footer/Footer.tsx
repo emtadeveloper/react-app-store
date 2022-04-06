@@ -22,7 +22,7 @@ import { ToastContainer } from "react-toastify";
 // utils
 
 import { handleToast } from "../../helper";
-import ScrollBtn from "./ScrollBtn";
+import ScrollBtn from "./scrollBtn";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const Footer: FC<IFooter> = ({ news, number, email, description }) => {

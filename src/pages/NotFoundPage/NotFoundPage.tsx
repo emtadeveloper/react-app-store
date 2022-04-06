@@ -12,7 +12,7 @@ import { Container } from "./style.css";
 
 // types
 
-import { INotFound } from "./../../types";
+import { INotFound } from "../../types";
 
 const NotFoundPage: FC<INotFound> = ({ NotFound, btn }) => {
     //

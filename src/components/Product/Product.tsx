@@ -12,10 +12,10 @@ import { Container, Division } from "./style.css";
 
 // components
 
-import Card from "../../components/Card";
-import FilterProduct from "../FilterProduct";
+import Card from "../card";
+import FilterProduct from "../filterProduct";
 import useAction from "./userAction";
-import SearchProduct from "../SearchProduct";
+import SearchProduct from "../searchProduct";
 
 // utils
 
