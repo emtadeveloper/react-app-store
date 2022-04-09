@@ -49,11 +49,20 @@ export const Division = styled.div`
         }
     }
     .userBox {
+        position: relative;
         border-radius: 1.5rem;
         background-color: white;
-        h3 {
-            font-size: 2rem;
-            color: ${(props) => props.theme.fix.black};
+        .emptyCard {
+            height: 50vh;
+            border-radius: 1.5rem;
+            ${flex_center}
+            h3 {
+                font-size: 1.8rem;
+                padding: 1rem 0;
+                text-align: center;
+                border-radius: 1.5rem;
+                color: ${(props) => props.theme.fix.black};
+            }
         }
         .shop {
             border-radius: 1.5rem;

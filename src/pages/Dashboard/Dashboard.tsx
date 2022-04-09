@@ -52,7 +52,9 @@ const Dashboard: FC<IDash> = ({ back, empty, total, logout }) => {
                 <div className="userBox">
                     <section className="shop">
                         {card.length === 0 ? (
-                            <h3> {empty} </h3>
+                            <div className="emptyCard">
+                                <h3> {empty} </h3>
+                            </div>
                         ) : (
                             card.map((item: any) => {
                                 return <Card {...item} />;

@@ -27,7 +27,6 @@ const Home: FC<IHome> = ({ header, footer, navBar, title_product, title_question
         <>
             <Header {...header} />
             <Nav {...navBar} />
-            <Title title={title_product} />
             {desc.map((item, index) => {
                 const Props = { key: item.id, direction: item.direction, image: item.image, title: item.title, description: item.description };
                 if (index === 0) {
