@@ -11,6 +11,7 @@ import Title from "../../components/title";
 import Product from "../../components/product";
 import Description from "../../components/description";
 import BtnAnboard from "../../components/description/btnAnboard";
+import Question from "../../components/question";
 
 // types
 
@@ -20,7 +21,7 @@ import { IHome } from "./../../types";
 
 import { scrollItem } from "../../helper";
 
-const Home: FC<IHome> = ({ header, footer, navBar, title_product, title_question, title_aboutUs, product, desc }) => {
+const Home: FC<IHome> = ({ header, footer, navBar, title_product, title_question, title_aboutUs, product, desc, question }) => {
     return (
         <>
             <Header {...header} />
@@ -32,7 +33,7 @@ const Home: FC<IHome> = ({ header, footer, navBar, title_product, title_question
                     return (
                         <Fragment key={item.id}>
                             <Description {...Props} children={<BtnAnboard btn={item.btn} scrollItem={scrollItem} />} />
-                            <Title title={title_question} /> <Title title={title_product} />
+                            <Title title={title_question} /> <Question {...question} /> <Title title={title_product} />
                             <Product {...product} /> <Title title={title_aboutUs} />
                         </Fragment>
                     );
