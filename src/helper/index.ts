@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 // types
 
-import { ITheme, IScroll, ICheckScroll, IFilter, IGetCategories, Res } from "./types";
+import { ITheme, IScroll, ICheckScroll, IFilter, IGetCategories, IBox } from "./types";
 import { ModeType } from "../types";
 import { get } from "../services";
 
@@ -58,6 +58,12 @@ export const handleToast = (state: string) => {
     } else {
         return toast.warning("ایمیل وارد شده صحیح نیست", { position: "top-right", autoClose: 1000, hideProgressBar: false, theme: "colored" });
     }
+};
+
+export const handelToggleButton: IBox = (id, box, setBox) => {
+    box.filter((item) => {
+        return item.id === id ? setBox(item) : null;
+    });
 };
 
 export const getCategories: IGetCategories = (state, dispatch, namecategories) => {
