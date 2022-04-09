@@ -4,15 +4,15 @@ import { FC, Fragment } from "react";
 
 // components
 
-import Footer from "../../components/footer";
-import Header from "../../components/header";
-import Nav from "../../components/nav";
-import Title from "../../components/title";
-import Product from "../../components/product";
-import Description from "../../components/description";
-import BtnAnboard from "../../components/description/btnAnboard";
-import Question from "../../components/question";
-import Box from "../../components/box";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Nav from "../../components/Nav";
+import Title from "../../components/Title";
+import Product from "../../components/Product";
+import Description from "../../components/Description";
+import BtnAnboard from "../../components/Description/BtnAnboard";
+import Question from "../../components/Question";
+import Box from "../../components/Box";
 
 // types
 

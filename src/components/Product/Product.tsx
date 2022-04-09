@@ -8,9 +8,9 @@ import { Container, Division } from "./style.css";
 
 // components
 
-import Card from "../card";
-import FilterProduct from "../filterProduct";
-import SearchProduct from "../searchProduct/SearchProduct";
+import Card from "../Card";
+import FilterProduct from "../FilterProduct";
+import SearchProduct from "../SearchProduct/SearchProduct";
 
 // types
 

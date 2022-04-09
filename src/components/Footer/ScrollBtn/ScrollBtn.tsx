@@ -4,7 +4,7 @@ import { useState, FC } from "react";
 
 // Styles
 
-import { Button } from "./style.css.";
+import { Button } from "./style.css";
 
 // Icons
 

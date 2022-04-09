@@ -8,8 +8,8 @@ import { Division, Container } from "./style.css";
 
 // components
 
-import ListItem from "./faq";
-import Tabel from "./tabs/Tabs";
+import ListItem from "./Faq";
+import Tabel from "./Tabs/Tabs";
 
 // types
 

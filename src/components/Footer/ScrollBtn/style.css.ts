@@ -6,7 +6,7 @@ interface hiddenProps {
 
 export const Button = styled.button<hiddenProps>`
     z-index: 9;
-    transition: all.1s;
+    transition: all 0.1s;
     border-radius: 1rem;
     ${box({ width: "4.5rem", height: "4.5rem" })};
     ${position({ position: "fixed", right: "2rem", bottom: "2rem" })};
