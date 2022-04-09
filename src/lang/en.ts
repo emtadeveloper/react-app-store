@@ -9,6 +9,7 @@ import { IHome, ILogin, IDash, INotFound } from "./../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const enHome: IHome = {
+    header: { btnPayment: "Final payment", btnCart: "View cart" },
     navBar: { btnDash: "dashboard", btnLogin: "login", home: "Home", product: "Product", aboutMe: "AboutMe", finish: "finish" },
     desc: [
         {
@@ -82,6 +83,7 @@ export const enHome: IHome = {
     product: {
         sorrySearch: " ):  Sorry nothing was found ",
         isLoading: "  ..... Receiving information",
+        error: "Check your Internet Connection",
         search: "?  What are you looking for ",
         modal: { back: "back ", addCard: "add to card" },
         filterProduct: {

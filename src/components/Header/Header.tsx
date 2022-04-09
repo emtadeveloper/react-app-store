@@ -1,6 +1,6 @@
 // react
 
-import { FC } from "react";
+import { FC, useState } from "react";
 
 // icons
 
@@ -9,7 +9,7 @@ import { faMagnifyingGlass, faBagShopping } from "@fortawesome/free-solid-svg-ic
 
 // styles
 
-import { Container, Divison, Bage } from "./style.css";
+import { Container, Divison, Bage, ContainerCard } from "./style.css";
 
 // helper
 
@@ -17,7 +17,6 @@ import { classTheme, iconTheme, langText, scrollItem } from "../../helper";
 
 // types
 
-import { IHeader } from "./types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 // hooks
@@ -26,19 +25,47 @@ import { useLangContext } from "../../hooks/useLangContext";
 import { useThemeContext } from "../../hooks/useThemeContext";
 import { useLangAction } from "../../hooks/uselangAction";
 import { useThemeAction } from "../../hooks/useThemeAction";
+import { useSelector } from "react-redux";
+import BageCard from "./bageCard";
+import { IHeader } from "./type";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useNavigate } from "react-router-dom";
 
-const Header: FC<IHeader> = ({ bage }) => {
+const Header: FC<IHeader> = ({ btnPayment, btnCart }) => {
     //
     const lang = useLangContext();
     const theme = useThemeContext();
+    const token = useAuthContext();
     const { changeTheme } = useThemeAction();
     const { changeLang } = useLangAction();
+    const state: any = useSelector((state) => state);
+    const bage = state.shopReducer.entities.length;
+    const card = state.shopReducer.entities;
+    const [visible, setVisible] = useState(false);
+    const Navigate = useNavigate();
+
+    const checkLogin = () => {
+        !!token ? Navigate("/dashboard") : Navigate("/login");
+    };
 
     return (
         <Container>
             <Divison>
-                <FontAwesomeIcon icon={faBagShopping as IconProp} className="icon" />
-                <Bage bage={bage}>{bage}</Bage>
+                <FontAwesomeIcon
+                    icon={faBagShopping as IconProp}
+                    className="icon"
+                    onClick={() => {
+                        setVisible(!visible);
+                    }}
+                />
+                <Bage
+                    onClick={() => {
+                        setVisible(!visible);
+                    }}
+                    bage={bage}
+                >
+                    {bage}
+                </Bage>
                 <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} onClick={() => scrollItem(2100)} className="icon" />
             </Divison>
             <Divison>
@@ -47,6 +74,14 @@ const Header: FC<IHeader> = ({ bage }) => {
                     {langText(lang)}
                 </span>
             </Divison>
+            {visible && bage !== 0 && (
+                <ContainerCard>
+                    {card.map((item: any) => {
+                        return <BageCard key={item.id} {...item} />;
+                    })}
+                    <button onClick={checkLogin}>{!!token ? btnCart : btnPayment}</button>
+                </ContainerCard>
+            )}
         </Container>
     );
 };

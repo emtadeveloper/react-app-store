@@ -19,6 +19,8 @@ import { Container, Division } from "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGraduate, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { useSelector } from "react-redux";
+import Card from "./Card";
 
 const Dashboard: FC<IDash> = ({ back, empty, total, logout }) => {
     //
@@ -28,6 +30,10 @@ const Dashboard: FC<IDash> = ({ back, empty, total, logout }) => {
         localStorage.removeItem("token");
         Navigate("/");
     };
+
+    const state: any = useSelector((state) => state);
+    const card = state.shopReducer.entities;
+
     return (
         <Container>
             <span className="back" onClick={() => Navigate("/")}>
@@ -45,7 +51,13 @@ const Dashboard: FC<IDash> = ({ back, empty, total, logout }) => {
                 </aside>
                 <div className="userBox">
                     <section className="shop">
-                        <h3> {empty} </h3>
+                        {card.length === 0 ? (
+                            <h3> {empty} </h3>
+                        ) : (
+                            card.map((item: any) => {
+                                return <Card {...item} />;
+                            })
+                        )}
                         <div className="footerBox"></div>
                     </section>
                 </div>

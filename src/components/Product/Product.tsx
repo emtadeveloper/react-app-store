@@ -1,10 +1,6 @@
 // react
 
-import { FC, useEffect, useReducer } from "react";
-
-// axios
-
-import { get } from "../../services/HttpClient";
+import { FC } from "react";
 
 // styles
 
@@ -14,48 +10,49 @@ import { Container, Division } from "./style.css";
 
 import Card from "../card";
 import FilterProduct from "../filterProduct";
-import useAction from "./userAction";
-import SearchProduct from "../searchProduct";
-
-// utils
-
-import { getCategories, Filter } from "../../helper";
+import SearchProduct from "../searchProduct/SearchProduct";
 
 // types
 
-import { IProduct, Data } from "./types";
+import { IProduct } from "./types";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
+import { productFilterCategories, productSearch } from "../../redux/action";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { fetchproduct } from "../../redux/action";
 
-const Product: FC<IProduct | null> = ({ filterProduct, isLoading, search, sorrySearch, modal }) => {
+const Product: FC<IProduct | null> = ({ filterProduct, isLoading, search, sorrySearch, modal, error }) => {
     //
-    const initState = { type: "", Filter: "", data: [], recentData: [], isLoading: true };
+    const product: any = useSelector((state: any) => state.productReducer, shallowEqual);
+    const dispatch = useDispatch();
 
-    const [state, dispatch] = useReducer(useAction, initState);
+    const filterFunc = (event: string) => dispatch(productSearch(event, product.entities));
 
-    useEffect(() => {
-        get("products").then((res: any) => {
-            dispatch({ type: "get-products-success", recentData: res.data, data: res.data });
-        });
-    }, []);
+    const refreshNet = () => dispatch(fetchproduct);
 
-    const filterFunc = (event: string) => Filter(state, dispatch, event);
+    const getCategoriesFunc = (namecategories?: string) => dispatch(productFilterCategories(namecategories, product.entities));
 
-    const getCategoriesFunc = (namecategories?: string) => getCategories(state, dispatch, namecategories);
-
-    const CardLoading = state.isLoading ? (
-        <h2 className="isLoading">{isLoading} </h2>
-    ) : state.recentData.length === 0 ? (
-        <h2 className="isLoading"> {sorrySearch} </h2>
-    ) : (
-        state.recentData.map((item) => {
-            const Item = { ...item, ...modal };
-            return <Card key={item.id} {...Item} />;
-        })
-    );
-
+    const CardLoading =
+        product.status === "loading" ? (
+            <h2 className="message">{isLoading} </h2>
+        ) : product.status === "error" ? (
+            <section className="containerError">
+                <h2 className="message">{error} </h2>
+                <FontAwesomeIcon onClick={refreshNet} icon={faArrowsRotate as IconProp} size="5x" />
+            </section>
+        ) : Object.keys(product.showEntities).length === 0 ? (
+            <h2 className="message"> {sorrySearch} </h2>
+        ) : (
+            Object.keys(product.showEntities).map((item) => {
+                const Item = { ...product.showEntities[item], ...modal };
+                return <Card key={item} {...Item} />;
+            })
+        );
     return (
         <Container>
             <SearchProduct search={search} Filter={filterFunc} />
-            <FilterProduct {...filterProduct} getCategories={getCategoriesFunc} Filter={state.Filter} />
+            <FilterProduct {...filterProduct} getCategories={getCategoriesFunc} Filter={product.filter} />
             <Division>{CardLoading}</Division>
         </Container>
     );

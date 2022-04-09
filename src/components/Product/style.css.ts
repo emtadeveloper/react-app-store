@@ -13,9 +13,16 @@ export const Division = styled.div`
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: flex-end;
-    .isLoading {
+    .containerError {
+        ${flex_center}
+        cursor: pointer;
+        margin: 5rem 0;
+        flex-direction: column;
+        color: ${(props) => props.theme.fix.green};
+    }
+    .message {
         width: 100%;
-        margin-top: 5rem;
+        margin: 5rem 0;
         text-align: center;
         color: ${(props) => props.theme.text.primary};
     }

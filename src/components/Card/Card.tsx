@@ -17,25 +17,25 @@ import { ICard } from "./types";
 import ModalCard from "../modalCard";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-const Card: FC<ICard> = ({ image, price, title, back, addCard }) => {
+const Card: FC<ICard> = ({ back, addCard, ...item }) => {
     //
     const [state, setState] = useState(false);
     const setModal = (visible: boolean) => setState(visible);
-    const Item = { setModal, image, price, title, back, addCard };
+    const Item = { setModal, back, addCard, ...item };
 
     return (
         <>
             <Container>
                 <div>
                     <figure>
-                        <img src={image} alt={price.toString()} loading="lazy" />
+                        <img src={item.image} alt={item.price.toString()} loading="lazy" />
                     </figure>
                     <Division>
-                        <h5 className="price"> {price} </h5>
+                        <h5 className="price"> {item.price} </h5>
                         <FontAwesomeIcon icon={faShoppingCart as IconProp} className="icon" onClick={() => setModal(true)} />
                     </Division>
                     <div className="shadow">
-                        <h6>{title}</h6>
+                        <h6>{item.title}</h6>
                     </div>
                 </div>
             </Container>

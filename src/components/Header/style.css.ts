@@ -99,3 +99,34 @@ export const Bage = styled.span<BageProps>`
         font-size: 1rem;
     }
 `;
+
+export const ContainerCard = styled.div`
+    top: 5rem;
+    ${(props) =>
+        props.theme.lang === "EN"
+            ? css`
+                  right: -2rem;
+              `
+            : css`
+                  left: -1rem;
+              `}
+    z-index: 4;
+    height: auto;
+    width: 25vw;
+    position: absolute;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+    @media only screen and (max-width: 1050px) {
+        width: 40%;
+    }
+    @media only screen and (max-width: 670px) {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-radius: 0 0 1.5rem 1.5rem;
+        font-size: 1.5rem;
+    }
+`;

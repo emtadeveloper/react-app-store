@@ -9,6 +9,7 @@ import { IHome, ILogin, IDash, INotFound } from "./../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const faHome: IHome = {
+    header: { btnPayment: "پرداخت نهایی ", btnCart: "مشاهده سبد خرید" },
     navBar: {
         btnDash: "داشبورد",
         btnLogin: "ورود",
@@ -56,6 +57,7 @@ export const faHome: IHome = {
         },
     ],
     product: {
+        error: "اتصال به اینترنت را بررسی کنید",
         sorrySearch: " ): متاسفم چیزی پیدا نشد",
         isLoading: ".... درحال دریافت اطلاعات",
         search: "  دنبال چی میگردی ؟ لطفا انگلیسی تایپ کنید   ",

@@ -25,7 +25,7 @@ const FilterProduct: FC<IFilterProduct> = ({ getCategories, Filter, all, jeweler
             <Button isActive={Filter === "men's clothing"} onClick={() => getCategories("men's clothing")}>
                 {mens}
             </Button>
-            <Button isActive={Filter === "all"} onClick={() => getCategories()}>
+            <Button isActive={Filter === "all"} onClick={() => getCategories("all")}>
                 {all}
             </Button>
         </Container>

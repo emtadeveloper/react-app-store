@@ -14,10 +14,10 @@ import Product from "../../components/product";
 
 import { IHome } from "./../../types";
 
-const Home: FC<IHome> = ({ footer, navBar, title_product, product }) => {
+const Home: FC<IHome> = ({ header, footer, navBar, title_product, product }) => {
     return (
         <>
-            <Header bage={1} />
+            <Header {...header} />
             <Nav {...navBar} />
             <Title title={title_product} />
             <Product {...product} />

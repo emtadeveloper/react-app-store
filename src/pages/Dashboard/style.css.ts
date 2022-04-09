@@ -5,6 +5,8 @@ import { position, grid, box } from "../../styles/mixin";
 export const Container = styled.div`
     width: 80%;
     direction: rtl;
+    height: auto;
+    margin-bottom: 5rem;
     transform: translate(-50%, -50%);
     ${position({ position: "absolute", top: "50%", left: "50%" })};
     span {
@@ -48,11 +50,14 @@ export const Division = styled.div`
     }
     .userBox {
         border-radius: 1.5rem;
-        ${grid({ align: "center", justify: "center" })}
-        background-color: ${(props) => props.theme.main.box};
+        background-color: white;
         h3 {
             font-size: 2rem;
-            color: ${(props) => props.theme.main.secoundryColor};
+            color: ${(props) => props.theme.fix.black};
+        }
+        .shop {
+            border-radius: 1.5rem;
+            background-color: white;
         }
     }
 `;
