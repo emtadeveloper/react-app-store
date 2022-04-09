@@ -17,7 +17,7 @@ import AuthProvider from "./providers/AuthProvider";
 // component
 
 import App from "./App";
-import Compose from "./components/Compose";
+import Compose from "./components/compose";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./fonts/fonts.css";

@@ -14,7 +14,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 // icons
 
 import { ICard } from "./types";
-import ModalCard from "../ModalCard";
+import ModalCard from "../modalCard";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const Card: FC<ICard> = ({ back, addCard, ...item }) => {
