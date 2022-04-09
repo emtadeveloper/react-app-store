@@ -6,6 +6,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     h6 {
+        color: ${(props) => props.theme.main.secoundryColor};
         line-height: 100%;
         height: 2rem;
         line-height: 2rem;
@@ -17,7 +18,7 @@ export const Container = styled.div`
     .icon {
         color: red;
         cursor: pointer;
-        opacity: 70%;
+        opacity: 50%;
     }
     img {
         width: 5rem;

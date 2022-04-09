@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 // Components Pages
 
 import Home from "../pages/Home";
-import Dashboard from "../pages/Login";
+import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import NotFoundPage from "../pages/NotFoundPage";
 import PrivateRoute from "./PrivateRoute";

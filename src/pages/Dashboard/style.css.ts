@@ -51,7 +51,7 @@ export const Division = styled.div`
     .userBox {
         position: relative;
         border-radius: 1.5rem;
-        background-color: white;
+        background-color: ${(props) => props.theme.main.box};
         .emptyCard {
             height: 50vh;
             border-radius: 1.5rem;
@@ -61,12 +61,11 @@ export const Division = styled.div`
                 padding: 1rem 0;
                 text-align: center;
                 border-radius: 1.5rem;
-                color: ${(props) => props.theme.fix.black};
+                color: ${(props) => props.theme.main.secoundryColor};
             }
         }
         .shop {
             border-radius: 1.5rem;
-            background-color: white;
         }
     }
 `;
