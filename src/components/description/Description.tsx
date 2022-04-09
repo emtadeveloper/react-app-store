@@ -17,11 +17,11 @@ const Description: FC<IDescription> = ({ image, title, description, direction, c
                 <figure>
                     <img src={image} alt={image} loading="lazy" />
                 </figure>
-                <figcaption>
+                <section>
                     <h2>{title}</h2>
                     <p>{description}</p>
                     {children}
-                </figcaption>
+                </section>
             </div>
         </Container>
     );

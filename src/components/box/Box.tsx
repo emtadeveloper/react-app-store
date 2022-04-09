@@ -26,10 +26,10 @@ const Box: FC<IBoxs> = ({ box, box_image }) => {
         <Container>
             <div>
                 <figure>{Image}</figure>
-                <figcaption>
+                <section>
                     <h2>{Box.title}</h2>
                     <p>{Box.description}</p>
-                </figcaption>
+                </section>
             </div>
         </Container>
     );
