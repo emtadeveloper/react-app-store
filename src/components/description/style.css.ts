@@ -18,7 +18,7 @@ export const Container = styled.div<directionProps>`
             ${grid({ gap: "4rem", column: "auto", row: "auto auto" })}
         }
     }
-    figcaption {
+    section {
         display: grid;
         @media only screen and (max-width: 670px) {
             p,

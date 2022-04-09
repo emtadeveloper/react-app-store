@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { IGlobal } from "./types";
-import { directionText, flex_center } from "./share";
+import { directionText } from "./share";
 export default createGlobalStyle<{ theme: IGlobal }>`
 
 *{
@@ -75,6 +75,7 @@ h1{
   }
   @media only screen and (max-width:670px) {
          font-size: 6rem;
+
         }
 }
 

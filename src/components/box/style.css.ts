@@ -26,5 +26,13 @@ export const Container = styled.div`
                 }
             }
         }
+        section {
+            @media only screen and (max-width: 670px) {
+                p,
+                h2 {
+                    text-align: center;
+                }
+            }
+        }
     }
 `;
