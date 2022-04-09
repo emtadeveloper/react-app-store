@@ -12,8 +12,8 @@ import { Container, Button } from "./style.css";
 
 // component
 
-import NavItem from "./Item";
-import Hamburger from "./Hamburger";
+import NavItem from "./item";
+import Hamburger from "./hamburger";
 
 // icons
 
