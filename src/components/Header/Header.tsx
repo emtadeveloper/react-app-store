@@ -26,7 +26,7 @@ import { useThemeContext } from "../../hooks/useThemeContext";
 import { useLangAction } from "../../hooks/uselangAction";
 import { useThemeAction } from "../../hooks/useThemeAction";
 import { useSelector } from "react-redux";
-import BageCard from "./BageCard";
+import BageCard from "./bageCard";
 import { IHeader } from "./type";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
