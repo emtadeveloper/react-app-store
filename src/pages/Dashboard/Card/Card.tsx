@@ -19,7 +19,7 @@ const Card: FC<ICard> = ({ image, title, id, number }) => {
         <Container>
             <img src={image} alt={title} />
             <h6>{title}</h6>
-            <h6 className="number">{number}</h6>
+            <h6 className="number"> {number}</h6>
             <FontAwesomeIcon
                 onClick={() => {
                     dispatch(shopRemoveCard(id));
