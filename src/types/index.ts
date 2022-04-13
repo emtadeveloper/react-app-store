@@ -43,6 +43,7 @@ export interface response {
     title: string;
     description: string;
     id: number;
+    number: number;
     rating: { count: number; rate: number };
 }
 
@@ -60,3 +61,8 @@ export type stateType = {
 export type ActionOnlyType = { type: string };
 
 export type ActionType<T> = { type: string; payload: T };
+
+export type IState = {
+    productReducer: { status: string; filter: string; entities: IProduct; showEntities: IProduct };
+    shopReducer: { entities: IProduct };
+};

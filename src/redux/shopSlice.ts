@@ -1,21 +1,21 @@
 import produce from "immer";
 import { EShop } from "../types/enum";
-import { ActionType, response } from "../types";
-import { stateShop, Action } from "./type";
+import { ActionType, response, IProduct, IState } from "../types";
+import { Action } from "./type";
 
-const initState: stateShop = { entities: [] };
+const initState: IState["shopReducer"] = { entities: {} };
 
-export const shopReducer = produce((state: stateShop, action: ActionType<Action>) => {
+export const shopReducer = produce((state: IState["shopReducer"], action: ActionType<Action>) => {
     switch (action.type) {
         case EShop.shopAddCard:
             const value = action.payload as response;
-            state.entities = [...state.entities, value];
+            const newEntities: IProduct = {};
+            newEntities[value.id] = value;
+            state.entities = { ...state.entities, ...newEntities };
             break;
         case EShop.shopRemoveCard:
             const id = action.payload as number;
-            state.entities = state.entities.filter((item: response) => {
-                return item.id !== id;
-            });
+            delete state.entities[id];
             break;
     }
 }, initState);

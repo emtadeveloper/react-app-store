@@ -10,14 +10,16 @@ export interface ICard {
     image: string;
     title: string;
     id: number;
+    number: number;
 }
-const Card: FC<ICard> = ({ image, title, id }) => {
+const Card: FC<ICard> = ({ image, title, id, number }) => {
     const dispatch = useDispatch();
 
     return (
         <Container>
             <img src={image} alt={title} />
             <h6>{title}</h6>
+            <h6 className="number">{number}</h6>
             <FontAwesomeIcon
                 onClick={() => {
                     dispatch(shopRemoveCard(id));

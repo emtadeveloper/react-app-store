@@ -112,7 +112,7 @@ export const ContainerCard = styled.div`
               `}
     z-index: 4;
     height: auto;
-    width: 25vw;
+    width: 30vw;
     position: absolute;
     border-radius: 1.5rem;
     background-color: white;
@@ -121,7 +121,7 @@ export const ContainerCard = styled.div`
         width: 40%;
     }
     @media only screen and (max-width: 670px) {
-        width: 100%;
+        width: 86vw;
     }
     button {
         width: 100%;

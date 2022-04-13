@@ -30,9 +30,10 @@ export const Container = styled.div`
         padding: 0 1rem;
         width: 70%;
         text-overflow: ellipsis;
-        text-align: ${(props) => (props.theme.lang === "EN" ? "right" : "left")};
+        text-align: center;
     }
-    .price {
+    .price,
+    .number {
         width: 10%;
         padding: 0 1rem;
         font-size: 1.2rem;

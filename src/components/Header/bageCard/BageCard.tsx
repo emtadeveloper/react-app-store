@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { shopRemoveCard } from "../../../redux/action";
 import { Container } from "./style.css";
 import { IBageCard } from "./type";
-const BageCard: FC<IBageCard> = ({ image, title, id, price }) => {
+const BageCard: FC<IBageCard> = ({ image, title, id, price, number }) => {
     const dispatch = useDispatch();
 
     return (
@@ -15,6 +15,7 @@ const BageCard: FC<IBageCard> = ({ image, title, id, price }) => {
                 <span className="square"></span>
                 <img src={image} alt={title} />
                 <h6 className="title">{title}</h6>
+                <h6 className="number">{number}</h6>
                 <span className="price">{price}</span>
                 <FontAwesomeIcon
                     onClick={() => {

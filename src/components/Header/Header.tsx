@@ -25,7 +25,7 @@ import { useLangContext } from "../../hooks/useLangContext";
 import { useThemeContext } from "../../hooks/useThemeContext";
 import { useLangAction } from "../../hooks/uselangAction";
 import { useThemeAction } from "../../hooks/useThemeAction";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import BageCard from "./bageCard";
 import { IHeader } from "./type";
 import { useAuthContext } from "../../hooks/useAuthContext";
@@ -38,9 +38,9 @@ const Header: FC<IHeader> = ({ btnPayment, btnCart }) => {
     const token = useAuthContext();
     const { changeTheme } = useThemeAction();
     const { changeLang } = useLangAction();
-    const state: any = useSelector((state) => state);
-    const bage = state.shopReducer.entities.length;
-    const card = state.shopReducer.entities;
+    const state: any = useSelector((state) => state, shallowEqual);
+    const bage = Object.keys(state.shopReducer.entities).length;
+    const card = Object.keys(state.shopReducer.entities);
     const [visible, setVisible] = useState(false);
     const Navigate = useNavigate();
 
@@ -75,9 +75,9 @@ const Header: FC<IHeader> = ({ btnPayment, btnCart }) => {
                 </span>
             </Divison>
             {visible && bage !== 0 && (
-                <ContainerCard>
+                <ContainerCard key="unique">
                     {card.map((item: any) => {
-                        return <BageCard key={item.id} {...item} />;
+                        return <BageCard key={item} {...state.shopReducer.entities[item]} />;
                     })}
                     <button onClick={checkLogin}>{!!token ? btnCart : btnPayment}</button>
                 </ContainerCard>

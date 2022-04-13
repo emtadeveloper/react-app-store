@@ -32,7 +32,7 @@ const Dashboard: FC<IDash> = ({ back, empty, total, logout }) => {
     };
 
     const state: any = useSelector((state) => state);
-    const card = state.shopReducer.entities;
+    const card = Object.keys(state.shopReducer.entities);
 
     return (
         <Container>
@@ -57,7 +57,7 @@ const Dashboard: FC<IDash> = ({ back, empty, total, logout }) => {
                             </div>
                         ) : (
                             card.map((item: any) => {
-                                return <Card {...item} />;
+                                return <Card {...state.shopReducer.entities[item]} />;
                             })
                         )}
                         <div className="footerBox"></div>

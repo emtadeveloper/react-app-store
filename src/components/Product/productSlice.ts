@@ -1,9 +1,9 @@
 import produce from "immer";
-import { IProduct, response, stateType, ActionType } from "../../types";
+import { IProduct, response, stateType, ActionType, IState } from "../../types";
 import { EStatus, EProduct } from "../../types/enum";
 import { Action } from "./types";
 
-const initState: stateType = { status: "idle", filter: "all", entities: {}, showEntities: {} };
+const initState: IState["productReducer"] = { status: "idle", filter: "all", entities: {}, showEntities: {} };
 
 export const productReducer = produce((state: stateType, action: ActionType<Action>) => {
     switch (action.type) {
@@ -17,7 +17,7 @@ export const productReducer = produce((state: stateType, action: ActionType<Acti
             const product = action.payload as response[];
             const newEntities: IProduct = {};
             product.forEach((item: response) => {
-                newEntities[item.id] = item;
+                newEntities[item.id] = { ...item, number: 1 };
             });
             state.entities = newEntities;
             state.showEntities = newEntities;
